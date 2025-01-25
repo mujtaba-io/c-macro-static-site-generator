@@ -19,6 +19,12 @@ In a.html:
 In b.html:
 ```html
 #include <./a.html>
+
+header(My Hehe Title, My Good Subtitle)
+
+
+<!-- defining more components -->
+
 #define card(image, title, text) (
     <div class="card">
         <img src="{image}" alt="{title}">
