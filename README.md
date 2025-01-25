@@ -28,6 +28,13 @@ In b.html:
 )
 ```
 
+After that, run `static_site_generator_machine.py` file. It will create a `build/` folder with a generated website. The other file,  `static_site_generator.py` is a layer on top of previous file, that automates the process of re-building as soon as changes have been made to the file. So if u need automated solution, just run the latter file and everything will be auto-generated on save, from the current directory.
+
+# Issues
+
+1. File paths are not resolved in generated site. So you have to put all your assets in `assets/` folder, otherwise issues may arise if during building, the contents of components are copied to other files present in another levels in system directory. Then references such as `./myimage.png` might introduce invalid path as now, the current directory is the directory of another component where this component is `#included`.
+2. I have not tested `#ifdef`, `#ifndef`, `#else`, `#endif`, `#undef` etc.
+
 # Other Examples
 
 We declare a component using `#define` like this:
